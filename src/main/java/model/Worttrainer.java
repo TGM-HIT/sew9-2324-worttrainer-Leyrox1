@@ -1,5 +1,11 @@
+package model;
+
+import model.Wort;
+import persistence.LoadFile;
+
 import java.util.Random;
 public class Worttrainer {
+    private LoadFile loadFile = new LoadFile();
     private int richtig;
     private int falsch;
     private Random random;
@@ -7,10 +13,18 @@ public class Worttrainer {
     private Wort aktWort;
 
     public Worttrainer() {
-        this.richtig = 0;
-        this.falsch = 0;
-        generator();
-        auswahl();
+        if(loadFile.rf) {
+            this.richtig = loadFile.getRichtig();
+            this.falsch = loadFile.getFalsch();
+            this.aktWort = new Wort(loadFile.getWort(), loadFile.getUrl());
+            generator();
+        } else {
+            this.richtig = 0;
+            this.falsch = 0;
+            generator();
+            auswahl();
+        }
+
     }
 
     public int getRichtig() {
@@ -39,7 +53,7 @@ public class Worttrainer {
         falsch++;
         return false;
     }
-    private void generator() {
+    public void generator() {
             woerter[0] = new Wort("Dog", "https://www.hindustantimes.com/ht-img/img/2023/08/25/1600x900/international_dog_day_1692974397743_1692974414085.jpg");
             woerter[1] = new Wort("Cat", "https://www.thesprucepets.com/thmb/uQnGtOt9VQiML2oG2YzAmPErrHo=/5441x0/filters:no_upscale():strip_icc()/all-about-tabby-cats-552489-hero-a23a9118af8c477b914a0a1570d4f787.jpg");
             woerter[2] = new Wort("Jellyfish", "https://niwa.co.nz/sites/niwa.co.nz/files/images/teasers/Jiggling-jellyfish-tile.jpg");

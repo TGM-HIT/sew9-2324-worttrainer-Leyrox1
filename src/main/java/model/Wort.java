@@ -1,3 +1,5 @@
+package model;
+
 public class Wort {
     private String wort;
     private String url;
@@ -9,5 +11,9 @@ public class Wort {
 
     public String getWort() {
         return this.wort;
+    }
+
+    public String getUrl() {
+        return this.url;
     }
 }
