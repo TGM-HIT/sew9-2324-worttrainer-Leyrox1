@@ -3,15 +3,19 @@ package model;
 import model.Wort;
 import persistence.LoadFile;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.Random;
 public class Worttrainer {
     private LoadFile loadFile = new LoadFile();
     private int richtig;
     private int falsch;
     private Random random;
-    private Wort[] woerter;
+    private Wort[] woerter = new Wort[10];
     private Wort aktWort;
-
+    
     public Worttrainer() {
         if(loadFile.rf) {
             this.richtig = loadFile.getRichtig();

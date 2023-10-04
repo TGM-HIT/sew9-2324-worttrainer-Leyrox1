@@ -23,12 +23,12 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-task runn {
-    doLast {
-        javaexec {
-            main = 'Main'
-            classpath = sourceSets.main.runtimeClasspath
-        }
-    }
-}
+
 apply plugin : "java"
+    ext {
+        javaMainClass = "model.Main"
+    }
+
+application {
+    mainClassName = javaMainClass
+}
