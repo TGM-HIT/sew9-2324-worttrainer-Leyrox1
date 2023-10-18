@@ -15,6 +15,6 @@ public class Worttest {
     public void testWort(){
         Wort wort= new Wort("wort","https://scitechdaily.com/images/Young-Humpback-Whale.jpg");
         assertThrows(IllegalArgumentException.class, () ->{wort.setWort("");});
-        assertThrows(IllegalArgumentException.class, () -> {wort.setWort(null);});
+        assertThrows(IllegalArgumentException.class, () -> {wort.setWort(null);}) ;
     }
 }

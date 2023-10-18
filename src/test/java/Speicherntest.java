@@ -38,6 +38,6 @@ public class Speicherntest {
         assertEquals(trainer1.getWortpaar(0).getWort(), trainer2.getWortpaar(0).getWort());
         assertEquals(trainer1.getWortpaar(0).getUrl(), trainer2.getWortpaar(0).getUrl());
         assertEquals(trainer1.getRichtig(), trainer2.getRichtig());
-        assertEquals(trainer1.getFalsch(), trainer2.getFalsch());
+        assertEquals(trainer1.getFalsch(), trainer2.getFalsch()) ;
     }
 }
