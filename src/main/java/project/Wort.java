@@ -52,7 +52,7 @@ public class Wort {
      * @param url the url to set
      */
     public void setUrl(String url) {
-            this.url=url;
+            this.url = url;
     }
 
     /**
@@ -61,9 +61,6 @@ public class Wort {
      * @return false, if word is invalid, true otherwise
      */
     public boolean checkWord(String wort) {
-        if(wort != null && !wort.equals("")){
-            return true;
-        }
-        return false;
+        return wort != null && !wort.isEmpty();
     }
 }

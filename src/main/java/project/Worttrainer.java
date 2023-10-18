@@ -11,10 +11,11 @@ import java.util.Random;
  */
 public class Worttrainer {
     private List<Wort> worter;
-    private int richtig;
-    private int falsch;
     private String eingabe;
     private int index = 0;
+    private int richtig;
+    private int falsch;
+
 
     /**
      * Constructor for the Worttrainer
@@ -45,14 +46,6 @@ public class Worttrainer {
         } else {
             throw new IllegalArgumentException("Invalid index");
         }
-    }
-
-    /**
-     * Returns the index of the current word
-     * @return the current index
-     */
-    public int getIndexAkt(){
-        return this.index;
     }
 
 
@@ -130,14 +123,12 @@ public class Worttrainer {
      * @param eingabe the current input
      */
     public void setEingabe(String eingabe) {
-        if(eingabe !=null) {
+        if (eingabe != null) {
             this.eingabe = eingabe;
         } else {
             throw new IllegalArgumentException("Eingabe can't be null!");
         }
     }
-
-
 
     /**
      * Gibt das aktuell gewählte Wortpaar zurück
