@@ -52,7 +52,7 @@ public class Wort {
      * @param url the url to set
      */
     public void setUrl(String url) {
-            this.url = url;
+            this.url = url ;
     }
 
     /**
